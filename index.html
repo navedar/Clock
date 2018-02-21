@@ -1,67 +1,10 @@
+<html>
+
 <head>
-
-<style>
-body{
-  padding-top: 20vh;
-  text-align: center;
-}
-
-#clock{
-  position: relative;
-  margin: auto;
-  width: 300px;
-  height: 300px;
-  background-color: #f0efef;
-  border: 4px solid #3f4040;
-  border-radius: 50%;
-  box-shadow: 2px 4px 15px rgba(0, 0, 0, 0.08);
-  padding: 10px;
-  text-align: center;
-  background-image: url("clock.png");
-  background-position: center;
-  background-size: cover;
-  opacity: 0;
-}
-.innerSui{
-  background-color: #5c5c5c;
-  border-radius: 3px;
-  height: 50%;
-  width: 100%
-}
-.sui{
-  display: inline;
-  position: absolute;
-  margin: 0 auto;
-}
-#suiSec{
-  top: 10;
-  bottom: 10;
-  width: 1px;
-}
-#suiMin{
-  top: 40;
-  bottom: 40;
-  width: 2px;
-}
-#suiHour{
-  top: 80;
-  bottom: 80;
-  width: 4px;
-}
-.tippu{
-  position: absolute;
-  background-color: #5c5c5c;
-  border-radius: 50%;
-  width: 10px;
-  height: 10px;
-  top: 48.2%;
-  left: 49%;
-}
-
-</style>
-
-
+  <title>JavaScript Analog Clock</title>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
 <div id="clock">
@@ -77,28 +20,7 @@ body{
   </div>
 </div>
 
-
-<script>
-
-var suiSec = document.getElementById('suiSec');
-var suiMin = document.getElementById('suiMin');
-var suiHour = document.getElementById('suiHour');
-
-setInterval(rota =>{
-  date = new Date();
-
-  degS = (360/60)*date.getSeconds();
-  degM = (360/60)*date.getMinutes();
-  degH = (360/12)*date.getHours();
-
-  suiSec.style = "transform: rotate("+degS+"deg)";
-  suiMin.style = "transform: rotate("+degM+"deg)";
-  suiHour.style = "transform: rotate("+degH+"deg)";
-
-}, 1000)
-setInterval(opa =>{
-document.getElementById('clock').style = "opacity:1";
-}, 1000)
-</script>
+<script src="script.js"></script>
 
 </body>
+</html>
